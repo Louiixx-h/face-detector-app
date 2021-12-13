@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Detector de faces</string>
+    <string name="escolher_imagem">Escolher imagem</string>
+    <string name="imagem">Imagem</string>
+    <string name="camera">Camera</string>
+    <string name="tirar_imagem">Tirar imagem</string>
+</resources>
