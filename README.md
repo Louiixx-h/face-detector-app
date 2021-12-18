@@ -12,6 +12,8 @@
 
 Este aplicativo faz uso do [ML Kit do Android](https://developers.google.com/ml-kit/vision/face-detection/android).
 
+<img src="https://github.com/Louiixx-h/Detector-de-Faces/blob/main/Imagens/Capa.png" min-width="400px" max-width="350px" width="380px" align="right" alt="Capa">
+
 ## Principais funcionalidades
 
 - **Destaques de faces:** Obtenha os contornos dos rostos.
