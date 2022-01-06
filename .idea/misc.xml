@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/Users/henri/AndroidStudioProjects/Detectordefaces/app/src/main/res/drawable/background_button_rect.xml" value="0.3828125" />
         <entry key="..\:/Users/henri/AndroidStudioProjects/Detectordefaces/app/src/main/res/drawable/background_oval.xml" value="0.3828125" />
+        <entry key="..\:/Users/henri/AndroidStudioProjects/Detectordefaces/app/src/main/res/drawable/background_oval_stroke.xml" value="0.3828125" />
         <entry key="..\:/Users/henri/AndroidStudioProjects/Detectordefaces/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/henri/AndroidStudioProjects/Detectordefaces/app/src/main/res/layout/fragment_camera.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/henri/AndroidStudioProjects/Detectordefaces/app/src/main/res/menu/menu_toolbar.xml" value="0.36666666666666664" />
       </map>
     </option>

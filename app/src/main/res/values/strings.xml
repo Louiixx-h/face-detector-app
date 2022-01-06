@@ -4,4 +4,6 @@
     <string name="imagem">Imagem</string>
     <string name="camera">Camera</string>
     <string name="tirar_imagem">Tirar imagem</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

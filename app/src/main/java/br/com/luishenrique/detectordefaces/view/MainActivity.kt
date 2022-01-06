@@ -1,4 +1,4 @@
-package br.com.luishenrique.detectordefaces
+package br.com.luishenrique.detectordefaces.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -11,6 +11,8 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
+import br.com.luishenrique.detectordefaces.MLKitVisionImage
+import br.com.luishenrique.detectordefaces.R
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.face.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     private val mlKitVisionImage = MLKitVisionImage()
     private val detector: FaceDetector
     private val PICK_IMAGE = 5
-    private val REQUEST_IMAGE_CAPTURE = 1
 
     init {
         val options = FaceDetectorOptions.Builder()
@@ -70,10 +71,11 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("QueryPermissionsNeeded")
     private fun openCamera() {
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also { takePictureIntent ->
-            takePictureIntent.resolveActivity(packageManager)?.also {
-                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-            }
+        with(supportFragmentManager.beginTransaction()) {
+            replace(R.id.fragmentContainer, CameraFragment(), TAG_CAMERAFRAGMENT)
+            addToBackStack(TAG_CAMERAFRAGMENT)
+            commit()
+            fragmentContainer.visibility = View.VISIBLE
         }
     }
 
@@ -85,14 +87,6 @@ class MainActivity : AppCompatActivity() {
             } else {
                 val inputStream: InputStream? = contentResolver.openInputStream(data.data!!)
                 val bitmap = BitmapFactory.decodeStream(BufferedInputStream(inputStream))
-                val image = mlKitVisionImage.imageFromBitmap(bitmap, 0)
-                processImage(image, bitmap)
-            }
-        } else if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            if (data == null || data.data == null) {
-                return
-            } else {
-                val bitmap = data.extras?.get("data") as Bitmap
                 val image = mlKitVisionImage.imageFromBitmap(bitmap, 0)
                 processImage(image, bitmap)
             }
